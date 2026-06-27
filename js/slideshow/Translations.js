@@ -49,19 +49,23 @@ r.send();
 
 function _createLinks(separator){
 
-	var html = "";
-	for(var i=0; i<TRANSLATIONS.length; i++){
-		var t = TRANSLATIONS[i];
-		// Refer to root if the language is default (en)
-		var href = (t.code === DEFAULT_LANG_CODE) ? '.' : (t.code+".html");
-		if(i>0) html+=separator;
-		html += "<a href='"+href+"' style='text-decoration:none'>";
-		html += t.lang;
-		html += "</a>";
-	}
+    var html = "";
+    for(var i=0; i<TRANSLATIONS.length; i++){
+        var t = TRANSLATIONS[i];
+        
+        // QOIDANI O'ZGARTIRDIK: Agar til 'uz' bo'lsa, 'index.html' ga yubor, 
+        // agar 'en' bo'lsa, asosiy sahifaga ('.') yubor, 
+        // qolganlari uchun esa odatdagidek 'lang.html' bo'laversin.
+        var href = (t.code === 'uz') ? 'index.html' : ((t.code === DEFAULT_LANG_CODE) ? '.' : (t.code+".html"));
+        
+        if(i>0) html+=separator;
+        html += "<a href='"+href+"' style='text-decoration:none'>";
+        html += t.lang;
+        html += "</a>";
+    }
 
-	// Hardcoding the external Arabic translation, oh well
-	html += " · <a href='http://alexanderclay.github.io/crowds' style='text-decoration:none'>العربية</a>";
+    // Hardcoding the external Arabic translation, oh well
+    html += " · <a href='http://alexanderclay.github.io/crowds' style='text-decoration:none'>العربية</a>";
 
-	return html;
+    return html;
 }
