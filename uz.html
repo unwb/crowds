@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="uz"> <head>
+
+	<title>Olomonning Donoligi va/yoki Telbaligi</title> <meta name="description" content="Inson tarmoqlari bo'yicha interaktiv qo'llanma"/> <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<link rel="alternate" href="http://ncase.me/crowds/"           hreflang="en">
+	<link rel="alternate" href="http://ncase.me/crowds/cs.html"    hreflang="cs">
+	<link rel="alternate" href="http://ncase.me/crowds/nl.html"    hreflang="nl">
+	<link rel="alternate" href="http://ncase.me/crowds/de.html"    hreflang="de">
+	<link rel="alternate" href="http://ncase.me/crowds/es.html"    hreflang="es-ES">
+	<link rel="alternate" href="http://ncase.me/crowds/fr.html"    hreflang="fr">
+	<link rel="alternate" href="http://ncase.me/crowds/it.html"    hreflang="it">
+	<link rel="alternate" href="http://ncase.me/crowds/ja.html"    hreflang="ja">
+	<link rel="alternate" href="http://ncase.me/crowds/pt.html"    hreflang="pt">
+	<link rel="alternate" href="http://ncase.me/crowds/ru.html"    hreflang="ru">
+	<link rel="alternate" href="http://ncase.me/crowds/uk.html"    hreflang="uk">
+	<link rel="alternate" href="http://ncase.me/crowds/vi.html"    hreflang="vi">
+	<link rel="alternate" href="http://ncase.me/crowds/zh-CN.html" hreflang="zh-CN">
+	<link rel="alternate" href="http://ncase.me/crowds/zh-TW.html" hreflang="zh-TW">
+
+	<meta itemprop="name" content="Olomonning donoligi va/yoki Telbaligi"> <meta itemprop="description" content="Inson tarmoqlari bo'yicha interaktiv qo'llanma"> <meta itemprop="image" content="http://ncase.me/crowds/social/thumb.png">
+
+	<meta name="twitter:title" content="Olomonning donoligi va/yoki Telbaligi"> <meta name="twitter:description" content="Inson tarmoqlari bo'yicha interaktiv qo'llanma"> <meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@ncasenmare">
+	<meta name="twitter:creator" content="@ncasenmare">
+	<meta name="twitter:image" content="http://ncase.me/crowds/social/thumb.png">
+
+	<meta property="og:title" content="Olomonning donoligi va/yoki Telbaligi"> <meta property="og:description" content="Inson tarmoqlari bo'yicha interaktiv qo'llanma"> <meta property="og:type" content="website">
+	<meta property="og:url" content="http://ncase.me/crowds/">
+	<meta property="og:image" content="http://ncase.me/crowds/social/thumb.png">
+
+	<link rel="stylesheet" type="text/css" href="css/index.css?v=7">
+
+</head>
+<body>
+
+	<div id="container">
+
+		<div id="simulations_container">
+			<div id="simulations"></div>
+		</div>
+
+		<div id="slideshow_container">
+			<div id="slideshow"></div>
+		</div>
+
+		<canvas id="scratch" width="711" height="400"></canvas>
+
+		<div id="skip">o'tkazib yuborish &gt;</div> <div id="modal_container">
+			<div id="modal_bg"></div>
+			<div id="modal">
+				<div id="modal_close">⨯</div>
+				<div id="modal_content_container">
+					<div id="modal_content"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<div id="navigation_container">
+		<div id="sound" mute="no">
+			<div id="sound_icon"></div>
+			<span id="sound_on">YONIQ</span> <span id="sound_off">OCHIQ</span> </div>
+		<div id="sharing">
+			<a id="fb" target="_blank" href="TODO"></a>
+			<a id="tw" target="_blank" href="TODO"></a>
+			<a id="em" target="_blank" href="TODO"></a>
+			<span id="share_title">
+			Olomon donoligi va/yoki Telbaligi </span>
+			<span id="share_desc">
+			Nega odamlar guruh bo'lib aqlli, ahmoq, mehribon yoki shafqatsiz qarorlar qabul qilishadi? Inson tarmoqlari bo'yicha interaktiv qo'llanma: </span>
+		</div>
+		<div id="navigation">
+
+			<div chapter="Introduction">
+				<span>0</span>
+				<span>0. Kirish</span>
+			</div>
+			<div chapter="Networks">
+				<span>1</span>
+				<span>1. Bog'lanishlar</span>
+			</div>
+			<div chapter="Simple">
+				<span>2</span>
+				<span>2. Oddiy yuqumlilik</span>
+			</div>
+			<div chapter="Complex">
+				<span>3</span>
+				<span>3. Murakkab yuqumlilik</span>
+			</div>
+			<div chapter="BB">
+				<span>4</span>
+				<span>4. Ichki va tashqi aloqalar</span> </div>
+			<div chapter="SmallWorld">
+				<span>5</span>
+				<span>5. Bu jajji dunyo</span>
+			</div>
+			<div chapter="Conclusion">
+				<span>6</span>
+				<span>6. Xulosa...</span>
+			</div>
+			<div chapter="Credits">
+				<span>7</span>
+				<span>7. Mualliflar</span>
+			</div>
+			<div chapter="Sandbox">
+				<span>★</span>
+				<span>★ Erkin rejim! ★</span>
+			</div>
+
+			<span class="nav_divider"></span>
+			
+			<div modal="bonus">
+				<span>?</span>
+				<span>Bonus ma'lumotlar!</span> </div>
+			<div modal="references">
+				<span style="margin-top: 7px; font-size: 35px;">*</span>
+				<span>Manbalar va havolalar</span> </div>
+			<div modal="translations">
+			<span style="margin-top:5px; position:relative;"><span style="
+				    position: absolute;
+				    top: -8px;
+				    left: 6px;
+				">A</span><span style="
+				    position: absolute;
+				    font-size: 16px;
+				    top: -1px;
+				    left: 16px;
+				">あ</span></span>
+				<span>Tarjimalari</span> </div>
+
+			<span id="nav_bubble"></span>
+			
+		</div>
+		<div id="translations"></div>
+		<div id="social"></div>
+	</div>
+	
+	<div id="pencil_container">
+		<canvas id="pencil"></canvas>
+	</div>
+
+	<div id="pre_preloader">
+		<div>yuklanmoqda...</div> </div>
+
+</body>
+</html>
+
+<script src="js/lib/helpers.js"></script>
+<script src="js/lib/inobounce.js"></script>
+<script src="js/lib/minpubsub.src.js"></script>
+<script src="js/lib/howler.min.js"></script>
+<script src="js/lib/Key.js"></script>
+<script src="js/lib/Mouse.js"></script>
+<script src="js/lib/Sprite.js"></script>
+
+<script src="js/slideshow/Slideshow.js"></script>
+<script src="js/slideshow/Pencil.js"></script>
+<script src="js/slideshow/Boxes.js"></script>
+<script src="js/slideshow/Scratch.js"></script>
+<script src="js/slideshow/Navigation.js"></script>
+<script src="js/slideshow/SimUI.js"></script>
+<script src="js/slideshow/SandboxUI.js"></script>
+<script src="js/slideshow/Modal.js?v=5"></script>
+<script src="js/slideshow/Preloader.js"></script>
+<script src="js/slideshow/Translations.js?v=5"></script>
+
+<script src="js/sim/Peep.js?v=2"></script>
+<script src="js/sim/Connection.js"></script>
+<script src="js/sim/ConnectorCutter.js"></script>
+<script src="js/sim/Simulations.js"></script>
+
+<script src="js/chapters/A_Preloader.js"></script>
+<script src="js/chapters/B_Introduction.js"></script>
+<script src="js/chapters/C_Networks.js"></script>
+<script src="js/chapters/D_Simple_Contagion.js"></script>
+<script src="js/chapters/E_Complex_Contagion.js"></script>
+<script src="js/chapters/F_Bonding_And_Bridging.js"></script>
+<script src="js/chapters/G_Small_World.js"></script>
+<script src="js/chapters/H_Conclusion.js"></script>
+<script src="js/chapters/I_Credits.js"></script>
+<script src="js/chapters/J_Sandbox.js?v=2"></script>
+
+<script src="js/main.js"></script>
+
+
+<span style="display:none">
+
+<words id="preloader_title">
+
+	<div style="font-size: 30px;">
+		<span>Olomonning</span>
+		<br>
+		<span style="font-size: 60px;letter-spacing: 4px;">DONOLIGI</span>
+		<span style="position:relative;top: -10px;">va/yoki</span>
+		<span style="font-size: 60px;">TELBALIGI</span>
+		<br>
+		<span style="font-size: 100px;line-height: 80px;position: relative;top: -15px; display:block;">HAQIDA</span>
+	</div>
+
+	<div style="color:#999">
+		davomiyligi: 30 daqiqa • muallif: nikki keys • tarjimon: <a href='https://github.com/unwb' target='_blank'>unwb</a> • <a href='.'>inglizcha asl nusxasi</a>
+	</div>
+
+</words>
+
+<words id="preloader_button">
+	<next></next>
+</words>
+
+<words id="preloader_loading">
+	yuklanmoqda...
+</words>
+
+<words id="preloader_play">
+	boshladik! <div class="rarr"></div> 
+</words>
+
+<words id="intro">
+
+	<br><br>
+
+	Ser Isaak Nyuton o'zini juda
+	<br>
+	aqlli odam deb hisoblar edi. Axir, differensial hisob va
+	<br>
+	butun olam tortishish qonunini yaratgan odam moliya bo'yicha
+	<br>
+	ozgina sarmoya kirita oladi, to'g'rimi? Xullas, qisqasi, u
+	<br>
+	1720-yildagi "Janubiy Dengiz Pufagi (South Sea Bubble)" deb nomlangan ommaviy
+	<br>
+	moliyaviy jazava paytida (hozirgi pul bilan aytganda) 4,600,000 dollar yo'qotadi.
+
+	<br><br>
+
+	Keyinchalik janob Nyuton aytganidek: <i>“Men samoviy jismlarning
+	<br>
+	harakatini hisoblay olaman, lekin odamlarning telbaligini emas.”</i>
+
+	<next>ha, unga qiyin bo'lgan ekan <div class="rarr"></div> </next>
+
+</words>
+
+<words id="intro_2">
+
+	<div style="height:0.5em"></div>
+
+	Albatta, bu bozorlar, tizimlar yoki butun boshli
+	<br>
+	demokratiyalar ostin-ustun bo'lib ketgan yagona holat emas &mdash;
+	<br>
+	bu olomonning <i>telbaligi</i>. Va shunday bo'lsa-da, insoniyatdan
+	<br>
+	butkul umid uzganingizda, birdan odamlar dovul paytida bir-birini
+	<br>
+	qutqarish uchun birlashganini, muammolarga birgalikda yechim topayotganini
+	<br>
+	va yaxshiroq dunyo uchun kurashayotganini ko'rasiz &mdash; bu olomonning <i>donoligi</i>!
+
+	<div style="height:0.9em"></div>
+
+	<b>Lekin <i>nega</i> ba'zi olomon telbalikka, ba'zilari esa donolikka yuz tutadi?</b>
+	<br>
+	Hech bir nazariya hamma narsani tushuntirib bera olmaydi, lekin yangi ilm-fan sohasi &mdash;
+	<br>
+	<b>tarmoqlar ilmi (network science)</b> bizga yo'l ko'rsatishi mumkin! Uning asosiy g'oyasi shundan iborat:
+	<br>
+	olomonni tushunish uchun biz <i>alohida odamlarga</i> emas, balki ularning...
+
+	<next>...<i>bog'lanishlariga</i> qarashimiz kerak. <div class="rarr"></div> </next>
+
+</words>
+
+<words id="networks_tutorial_start">
+	<b>Keling, tarmoq chizamiz!</b>
+	Har bir chiziq ikki kishi o'rtasidagi do'stlik aloqasini anglatadi:
+</words>
+
+<words id="networks_tutorial_connect">
+	bog'lash uchun chizing
+</words>
+
+<words id="networks_tutorial_disconnect">
+	uzish uchun ustidan chizing
+</words>
+
+<words id="networks_tutorial_end">
+
+	chizib bo'lganingizdan va o'ynab ko'rganingizdan keyin,
+	<next wiggle>davom etamiz <div class="rarr"></div> </next>
+
+</words>
+
+<words id="networks_threshold">
+
+	Ijtimoiy aloqalar shunchaki chiroyli rasmlar chizish uchun emas.
+	Odamlar atrofdagi dunyoni tushunish uchun o'z aloqalariga <i> tayanadilar</i>.
+	Masalan, odamlar o'z do'stlarining <b>necha foizi (o'zlarini hisobga olmaganda)</b>,
+	aytaylik, ichkilikka mukkasidan ketganini bilish uchun atrofdagilarga qarashadi. <icon name="yellow"></icon>
+
+</words>
+
+<words id="networks_threshold_instruction">
+	<b>Chiziqlarni chizing/o'chiring va nima sodir bo'lishini ko'ring! <div class="rarr"></div> </b>
+</words>
+
+<words id="networks_threshold_end">
+	<next>ajoyib, tushunarli</next>
+</words>
+
+<words id="networks_pre_puzzle">
+	Biroq, ijtimoiy tarmoqlar insonlarni <i> chalg'itishi</i> mumkin.
+	Xuddi biz uning ustida turganimiz sababli Yer tekis bo'lib ko'ringandek,
+	odamlar jamiyatning ichida bo'lganliklari uchun u haqida noto'g'ri tasavvurga ega bo'lishlari mumkin.
+</words>
+
+<words id="optional_reading">
+	<div style="position:absolute; top:5px;">
+		<i>ixtiyoriy</i> qo'shimcha bonus ma'lumotlar! &uarr;
+	</div>
+	<div style="position:absolute; left:216px; top:10px;">
+		&darr; manbalar va havolalar
+	</div>
+</words>
+
+<words id="networks_pre_puzzle_2">
+	
+	<bon id="books"></bon>
+
+	<br>
+
+	Masalan, 1991-yildagi tadqiqot shuni ko'rsatdiki<ref id="drunk"></ref>
+	“deyarli barcha [kollej] talabalari o'z do'stlarini o'zlariga qaraganda ko'proq ichadi deb hisoblashadi.”
+	Lekin bu imkonsizdek tuyuladi!
+	Qanday qilib bunday bo'lishi mumkin?
+	Hozir siz tarmoq chizish orqali ushbu savolga o'zingiz javob topasiz.
+	Vaqt keldi...
+
+	<next>HAMMANI CHALG'ITAMIZ <div class="rarr"></div> </next>
+
+</words>
+
+<words id="networks_puzzle">
+
+	<b style="font-size:2em">BOSH QOTIRMA VAQTI!</b>
+	<br>
+	<i>Hamma</i> o'z do'stlarining aksariyati (50% cheklov) ichkilikka mukkasidan ketgan <icon name="yellow"></icon> deb o'ylashiga majbur qiling
+	(garchi ichmaydiganlar ichadiganlardan 2 barobar ko'p bo'lsa ham!)
+
+</words>
+<words id="networks_puzzle_metric">
+	<b>CHALG'ITILDI:</b>
+</words>
+<words id="networks_puzzle_metric_2">
+	9 ta odamdan
+</words>
+<words id="networks_puzzle_end">
+	Tabriklaymiz! Siz bir guruh talabalarni o'ta zararli ijtimoiy norma keng tarqalganiga ishontira oldingiz! Qoyil!
+	<next wiggle>...e, rahmat?</next>
+</words>
+
+<words id="networks_post_puzzle">
+
+	Siz hozirgina yaratgan narsa "Ko'pchilik illyuziyasi" (The Majority Illusion) deb ataladi<ref id="majority"></ref>.
+	Bu narsa nima uchun odamlar o'zlarining siyosiy qarashlarini hamma qo'llab-quvvatlaydi deb o'ylashlarini
+	yoki nima uchun ekstremizm aslidan ko'ra kengroq tarqalgandek tuyulishini tushuntirib beradi.
+	<i>Haqiqiy telbalik.</i>
+
+	<bon id="connections"></bon>
+
+	Lekin odamlar boshqalarning g'oyalari va xatti-harakatlarini shunchaki kuzatib turishmaydi,
+	balki ulardan faol ravishda <i>nusxa ko'chirishadi</i>.
+	Keling, endi tarmoq olimlari nima deb ataydigan narsaga nazar tashlaymiz...
+
+	<next>“Yuqumlilik!” <div class="rarr"></div> </next>
+
+
+</words>
+
+<words id="simple_simple">
+	<i>Keling, hozircha "cheklovlar" (threshold) haqida unurtib turamiz.</i>
+	Pastda: bizda qandaydir ma'lumotga ega bo'lgan odam bor <icon name="red"></icon>.
+	Aniqrog'i, <i>noto'g'ri</i> ma'lumotga. Zamonaviy tilda aytganda "feyk nyus" (yolg'on xabar).
+	Va har kuni bu odam xuddi virus kabi bu mish-mishni o'z do'stlariga tarqatadi.
+	Ular esa o'z navbatida <i>o'zlarining</i> do'stlariga tarqatishadi. Va hokazo.
+	<br>
+	<b>
+	Simulyatsiyani boshlang! <div class="darr"></div>
+	(p.s: simulyatsiya ishlayotganda chiza olmaysiz)
+	</b>
+</words>
+
+<words id="simple_simple_2">
+	Eslatma: nomining salbiyligiga qaramay, "yuqumlilik" yaxshi yoki yomon (yoki neytral) bo'lishi mumkin.
+	Chekish, sog'liq, baxt, ovoz berish tendensiyalari va hamkorlik darajasi kabi narsalarning
+	barchasi "yuqumli" ekanligiga kuchli statistik dalillar mavjud<ref id="contagion"></ref> &mdash;
+	hatto o'z joniga qasd qilish<ref id="suicides"></ref> va ommaviy otishmalar ham<ref id="shootings"></ref> shunday xususiyatga ega ekanligi aniqlangan.
+</words>
+
+<words id="simple_simple_end">
+	<next wiggle>bu kayfiyatni tushirar ekan <div class="rarr"></div> </next>
+</words>
+
+<words id="simple_cascade">
+	Shunday.
+	Xullas, <b>BOSH QOTIRMA VAQTI!</b>
+	<br>
+	Tarmoq chizing va simulyatsiyani ishga tushiring,
+	shunda <i>hamma</i> ushbu "yuqumli xabar"ni yuqtirib olsin.
+	<br>
+	(yangi qoida: siz <i>yo'g'on</i> chiziqlarni uza olmaysiz)
+</words>
+
+<words id="simple_cascade_end">
+	<next wiggle>shunchaki daho <div class="rarr"></div> </next>
+</words>
+
+<words id="simple_post_cascade">
+	Ushbu telbalikning tarqalishi <b>"axborot kaskadi"</b> deb ataladi.
+	Janob Nyuton 1720-yilda aynan shunday kaskad qurboni bo'lgan.
+	Dunyoning moliya institutlari esa 2008-yilda xuddi shunday kaskadga uchragan.<ref id="subprime"></ref>
+	<br><br>
+	Biroq: <i>bu simulyatsiya to'liq to'g'ri emas.</i>
+	Ko'p g'oyalar viruslar kabi tarqalmaydi.
+	Ko'pgina e'tiqodlar va xatti-harakatlar "yuqishi" uchun odam unga bir martadan ko'proq 
+	"duch kelishi" (exposed) kerak bo'ladi.
+	Shuning uchun tarmoq olimlari g'oyalar/xatti-harakatlar tarqalishini tavsiflash uchun yangi, 
+	yaxshiroq usulni o'ylab topishdi va uni...
+	<next wiggle>“<i>Murakkab</i> yuqumlilik!” deb atashdi <div class="rarr"></div> </next>
+</words>
+
+<words id="complex_complex">
+
+	Keling, "cheklovlar" (thresholds) va haligi ichkilikka mukkasidan ketgan <icon name="yellow"></icon> misoliga qaytamiz!
+	Buni birinchi marta o'ynaganingizda odamlar o'z xatti-harakatlarini o'zgartirishmagan edi.
+
+	<br><br>
+
+	Endi esa odamlar o'z do'stlarining <i>50% dan ko'prog'i ichishni boshlagandagina</i> ichishga o'tsa nima bo'lishini simulyatsiya qilamiz!
+	<b>Simulyatsiyani boshlashdan oldin o'zingizga savol bering: sizningcha nima sodir bo'lishi kerak?</b>
+
+	<br><br>
+	
+	<b>Endi esa simulyatsiyani ishga tushiring va aslida nima bo'lishini ko'ring! <div class="rarr"></div> </b>
+
+</words>
+
+<words id="complex_complex_2">
+	<span style="line-height:1.3em; display:block;">
+		
+		Avvalgi "feyk xabar" <icon name="red"></icon> yuqumliligidan farqli o'laroq,
+		bu safar yuqumlilik <icon name="yellow"></icon> <i>hamma odamga</i> tarqalib ketmadi!
+		Dastlabki bir nechta odam buni yuqtirib oldi, chunki ular atigi bitta ichadigan odam bilan bog'langan bo'lsa-da,
+		o'sha odam ularning do'stlarining 50 foizini tashkil qiladi (ha, ular juda yolg'iz odamlar).
+		Zanjirning oxiriga yaqin turgan odam esa buni yuqtirmadi, chunki unda ichadigan do'st bo'lsa ham,
+		bu uning do'stlarining 50 foizlik cheklovidan o'ta olmadi.
+
+		<div style="height:0.75em"></div>
+
+		"Yutilgan" do'stlarining <i>nisbiy</i> foizi muhim rol o'ynaydi.
+		<b>Murakkab yuqumlilik</b> nazariyasi<ref id="complex"></ref> bilan bizning sodda 
+		"virus kabi tarqaladi" degan <b>oddiy yuqumlilik</b> nazariyamiz o'rtasidagi farq ham <i>shunda</i>.
+		(aytsa bo'ladiki, "oddiy yuqumlilik" bu shunchaki cheklovi "0% dan yuqori" bo'lgan yuqumlilikdir)
+
+		<div style="height:0.75em"></div>
+
+		Biroq, yuqumli narsalar har doim ham yomon bo'lavermaydi &mdash;
+		olomonning <i>telbaligi</i> haqida yetarlicha gaplashdik, keling endi...
+		<next><span style="font-size:0.8em;">...olomonning <i>donoligi</i> haqida gaplashaylik.</span></next>
+
+	</span>
+</words>
+
+<words id="complex_complex_3">
+
+	Bu yerda bizda ko'ngilli ravishda... aytaylik, dovul paytida odamlarni qutqaradigan,
+	kam ta'minlangan bolalarga dars beradigan yoki shunga o'xshash ajoyib ish qiladigan inson bor <icon name="blue"></icon>.
+	Asosiysi, bu "yaxshi" murakkab yuqumlilik.
+	Bu safar cheklov bor-yo'g'i 25% deb tasavvur qilaylik &mdash;
+	odamlar ko'ngilli bo'lishga tayyor, faqat do'stlarining kamida 25 foizi ham shunday qilsa.
+	Axir yaxshilik qilish uchun ham ozgina ijtimoiy turtki kerak bo'ladi.
+
+	<br><br>
+
+	<b>&larr; Hamtovoqlarni yaxshi kayfiyat bilan "zararlang"!</b>
+
+</words>
+
+<words id="complex_complex_3_end">
+	<span style="line-height:1.3em; display:block;">
+
+		<b>ESLATMA:</b> Ko'ngillilik &mdash; murakkab yuqumlilikning ko'plab misollaridan <i>bittasi</i> xolos!
+		Boshqalariga: saylovlarda qatnashish, sog'lom turmush tarzi odatlari,
+		o'z qarashlarini qayta ko'rib chiqish, biror muammoni chuqur tushunishga vaqt ajratish kiradi &mdash;
+		ya'ni birgina "turtki"dan ko'proq narsa talab qiladigan har qanday narsa.
+		Murakkab yuqumlilik har doim ham <i>oqilona</i> bo'lavermaydi,
+		lekin dono bo'lish &mdash; bu har doim murakkab yuqumlilikdir.
+
+		<div style="height:0.75em"></div>
+
+		(Xo'sh, hayotiy <i>oddiy</i> yuqumlilikka nima misol bo'ladi?
+		Odatda mayda faktlar, masalan: "xaltali kalamushning 13 ta ko'kragi bor"<ref id="possum"></ref>)
+
+		<bon id="contagions"></bon>
+
+		Endi murakkab yuqumlilikning haqiqiy kuchi va g'alati tabiatini ko'rish uchun, keling...
+
+		<next>...avvalgi bosh qotirmaga qaytamiz <div class="rarr"></div> </next>
+
+	</span>
+</words>
+
+<words id="complex_cascade">
+	Buni eslaysizmi? Bu safar <i>murakkab</i> yuqumlilik <icon name="blue"></icon> bilan ish biroz qiyinroq kechadi...
+	<br>
+	<b>Hammani murakkab donolik bilan "zararlashga" harakat qiling! <div class="darr"></div></b>
+</words>
+
+<words id="complex_cascade_feel_free">
+	(bemalol 'start' tugmasini bosing va xohlagancha turli yechimlarni sinab ko'ring)
+</words>
+
+<words id="complex_cascade_end">
+	<next wiggle>DOHONA! <div class="rarr"></div> </next>
+</words>
+
+<words id="complex_post_cascade">
+	Siz har qanday "murakkab" yoki "oddiy", yaxshi yoki yomon, dono yoki telba g'oyani tarqatish uchun
+	shunchaki yangi aloqalarni qo'shishda davom etish kerak deb o'ylayotgandirsiz.
+	Lekin chindan ham shundaymi? Keling, yana bir...
+</words>
+<words id="complex_post_cascade_end">
+	<next wiggle>...avvalgi bosh qotirmaga qaytamiz <div class="rarr"></div> </next>
+</words>
+
+<words id="complex_prevent">
+	Agar pastdagi "start" tugmasini bossangiz, murakkab yuqumlilik <icon name="blue"></icon> shunchaki hammaga tarqaladi.
+	Bunga ajablanmasa ham bo'ladi.
+	Lekin endi keling, shu paytgacha qilgan ishlarimizning tamoman <i>teskarisini</i> qilamiz:
+	<b>shunday tarmoq chizingki, g'oya hammaga tarqalib ketishining <i>олдини olsin</i>! <div class="darr"></div></b>
+</words>
+
+<words id="complex_prevent_2">
+	Ko'rdingizmi?
+	Ko'proq aloqalar har doim <i>oddiy</i> g'oyalar tarqalishiga yordam bersa-da,
+	<b>ko'p aloqalar <i>murakkab</i> g'oyalar tarqalishiga zarar yetkazishi mumkin!</b>
+	(bu narsa sizni internet haqida o'ylantirib qo'ymayaptimi?)
+	Va bu shunchaki nazariy muammo emas. Bu hayot-mamot masalasi bo'lishi mumkin...
+</words>
+
+<words id="complex_prevent_end">
+	<next wiggle>...yoki o'lim. <div class="rarr"></div> </next>
+</words>
+
+<words id="complex_groupthink">
+		
+	NASA xodimlari juda aqlli insonlar edi.
+	Axir ular Nyuton nazariyalaridan foydalanib bizni Oyga olib chiqishgan.
+	Xullas, qisqasi, 1986-yilda <i>muhandislarning ogohlantirishlariga qaramay</i>,
+	ular Challenger shattlini koinotga uchirishdi va u portlab ketib, 7 kishining umriga zomin bo'ldi.
+	Bunga to'g'ridan-to'g'ri sabab: o'sha kuni ertalab havo juda sovuq edi.
+
+	<div style="height:0.9em"></div>
+
+	Bunga bilvosita sabab esa: rahbarlar muhandislarning ogohlantirishlariga quloq solishmagan edi.
+	Nega? Bunga sabab &mdash; <b>guruhbozlik fikrlashi (groupthink)</b><ref id="groupthink"></ref>.
+	Guruh o'zaro <i>juda</i> qattiq jipslashib ketganda (yirik tashkilotlar rahbarligida bo'lgani kabi),
+	ular o'z e'tiqodlari yoki obro'siga shubha tug'diradigan murakkab g'oyalarni qabul qilishga qarshilik ko'rsata boshlaydilar.
+
+	<div style="height:0.9em"></div>
+
+	Tashkilotlar olomon telbaligiga mana shunday taslim bo'ladi.
+	Lekin qanday qilib olomon <i>donoligini</i> shakllantirishimiz mumkin?
+	Muxtasar qilib aytganda, ikki so'z bilan:
+
+	<next>Ichki va Tashqi aloqalar <div class="rarr"></div> </next>
+
+</words>
+
+<words id="bonding_1">
+	&larr; Aloqalar juda kam bo'lsa, g'oya tarqala olmaydi.
+	<br>
+	Aloqalar o'ta ko'p bo'lsa, guruhbozlik kelib chiqadi. <div class="rarr"></div> 
+</words>
+
+<words id="bonding_2">
+	<b>
+	O'sha oltin o'rtaliqni topadigan guruh chizing:
+	murakkab g'oyani tarqatish uchun yetarli darajada bog'langan bo'lsin!
+	<div class="darr"></div>
+	</b>
+</words>
+
+<words id="bonding_end">
+	Juda oddiy!
+	Guruh <i>ichidagi</i> aloqalar soni <b>ichki ijtimoiy kapital (bonding social capital)</b> deb ataladi<ref id="social_capital"></ref>.
+	Lekin guruhlar...
+	<next wiggle>...<i>o'rtasidagi</i> aloqalar-chi?</next>
+</words>
+
+<words id="bridging_1">
+	O'zingiz ham payqagan bo'lsangiz kerak,
+	guruhlar <i>o'rtasidagi</i> aloqalar soni
+	<b>tashqi ijtimoiy kapital (bridging social capital)</b> deb ataladi.
+	Bu juda muhim, chunki u guruhlarga o'zlarining yopiq "aks-sado xonalari"dan (echo chambers) chiqib ketishga yordam beradi!
+	<br>
+	<b>Hammani murakkab donolik bilan "zararlash" uchun ko'prik chizing:</b>
+</words>
+
+<words id="bridging_end">
+	Xuddi ichki aloqalar kabi, tashqi aloqalarda ham oltin o'rtaliq mavjud.<ref id="bridge"></ref>
+	(qo'shimcha topshiriq: shunday qalin ko'prik chizishga harakat qilingki, murakkab yuqumlilik
+	u orqali <i>o'ta olmasin</i>!)
+	Endi guruhlar <i>ichida</i> va <i>o'rtasida</i> aloqalarni qanday loyihalashni bilganimizdan so'ng, keling...
+	<next wiggle>...ikkalasini bir vaqtda qilamiz!</next>
+</words>
+
+<words id="bb_1">
+
+	<b style="font-size:2em">YAKUNIY BOSH QOTIRMA!</b>
+	<br>
+	Guruhlar ichida (ichki) va guruhlar o'rtasida (tashqi) aloqalarni chizing,
+	shunda donolik butun olomonga tarqalsin:
+
+</words>
+<words id="bb_2">
+
+	Tabriklaymiz, siz hozirgina juda o'ziga xos tarmoq turini chizdingiz!
+	Ichki va tashqi aloqalarning to'g'ri mutanosibligiga ega tarmoqlar juda muhim ahamiyatga ega bo'lib, ular...
+	<next wiggle style="display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width:12em; white-space:normal; font-size:0.75em; text-align:center;">
+		<div style="font-size: 14px; line-height: 1.1em; padding-top: 5px;">
+    <next><span>“Kichik dunyo tarmoqlari” (Small World Networks)<br>deb ataladi</span></next>
+</div>
+	</next>
+
+</words>
+<words id="bb_small_world_1">
+
+	<i>"Bir xilliksiz birlik". "Bo'linishlarsiz xilma-xillik". "E Pluribus Unum: ko'pchilikdan bittaga".</i>
+	<br>
+	Qanday ifodalanmasin, turli davrlar va madaniyatlardagi insonlar ko'pincha bitta dono xulosaga kelishadi:
+	<b>
+	sog'lom jamiyat guruhlar <i>ichidagi</i> rishtalar va guruhlar <i>o'rtasidagi</i> ko'priklar muvozanatiga muhtojdir.
+	</b>
+	Ya'ni:
+
+</words>
+<words id="bb_small_world_2">
+	Bunday emas...
+	<br>
+	(chunki g'oyalar tarqala olmaydi)
+</words>
+<words id="bb_small_world_3">
+	bunday ham emas...
+	<br>
+	(chunki guruhbozlik kelib chiqadi)
+</words>
+<words id="bb_small_world_4">
+	...balki manabu qiyofada:
+</words>
+<words id="bb_small_world_5">
+	
+	Tarmoq olimlari endilikda ushbu qadimiy donolikka matematik ta'rif berishdi:
+	<b>kichik dunyo tarmog'i (small world network)</b><ref id="small_world"></ref>.
+	Ichki va tashqi aloqalarning ushbu optimal kombinatsiyasi bizning neyronlarimiz qanday bog'langanligini tushuntiradi<ref id="swn_neurons"></ref>,
+	jamoaviy ijodkorlikni<ref id="swn_creativity"></ref> va muammolarni hal qilishni rag'batlantiradi<ref id="swn_social_physics"></ref>,
+	hatto bir safar AQSh prezidenti Jon Kennediga yadro urushidan arang omon qolishga yordam bergan!<ref id="swn_jfk"></ref>
+	Shunday ekan, ha, kichik dunyolar juda muhim narsa.
+
+</words>
+<words id="bb_small_world_end">
+	<next>yaxshi, keling buni yakunlaymiz... <div class="rarr"></div> </next>
+</words>
+
+<words id="sandbox_caption">
+	(hey... bir sirni bilishni xohlaysizmi?<ref id="sandbox"></ref>)
+</words>
+
+<words id="sandbox_contagion">
+	Yuqumlilik:
+</words>
+<words id="sandbox_contagion_simple">
+	oddiy
+</words>
+<words id="sandbox_contagion_complex">
+	murakkab
+</words>
+<words id="sandbox_color_chooser">
+	Yuqumlilik rangi:
+</words>
+<words id="sandbox_tool_chooser">
+	Asbobni tanlang...
+</words>
+
+<words id="sandbox_tool_pencil">
+	Tarmoq chizish
+</words>
+<words id="sandbox_tool_add">
+	Odam qo'shish
+</words>
+<words id="sandbox_tool_add_infected">
+	"Zararlangan" qo'shish
+</words>
+<words id="sandbox_tool_move">
+	Odamni surish
+</words>
+<words id="sandbox_tool_delete">
+	Odamni o'chirish
+</words>
+<words id="sandbox_tool_clear">
+	<b>HAMMASINI TOZALASH</b>
+</words>
+
+<words id="sandbox_shortcuts_label">
+    (...yoki klaviatura tugmalaridan foydalaning!)
+</words>
+
+<words id="sandbox_shortcuts">
+    <div style="font-size: 10px; line-height: 1.4em;">
+        [1]: Odam qo'shish &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2]: "Zararlangan" qo'shish
+        <br>
+        [Probel]: Surish &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Backspace]: O'chirish
+    </div>
+</words>
+
+<words id="conclusion_1">
+	
+	<div style="font-size: 30px;">
+		XULOSA: hamma gap nimada...
+	</div>
+	<div style="
+		width: 100%;
+	    position: absolute;
+	    font-size: 88px;
+	    top: 20px;
+	    line-height: 100px; display:block;
+	">
+	    Yuqumlilik va Aloqalar
+	</div>
+
+	<div style="
+	    width: 710px;
+	    position: absolute;
+	    top: 125px;
+	    left: 250px;
+	">
+		<b>Yuqumlilik:</b>
+		Neyronlar miyada signallarni uzatgani kabi, odamlar ham jamiyatda e'tiqodlar va xatti-harakatlarni uzatadilar.
+		Biz nafaqat do'stlarimizga, balki do'stlarimizning do'stlariga, va hatto ularning do'stlariga ham ta'sir o'tkazamiz!<ref id="three_degrees"></ref>
+		(“dunyoda ko'rmoqchi bo'lgan o'zgarishingizga o'zingiz aylaning” va hokazo)
+		Lekin xuddi neyronlar kabi, gap faqat signallarda emas, balki...
+	</div>
+
+	<div style="
+	    width: 710px;
+	    position: absolute;
+	    top: 275px;
+	    left: 250px;
+	">
+		<b>Aloqalar:</b>
+		Aloqalar juda kam bo'lsa, murakkab g'oyalar tarqala olmaydi.
+		Aloqalar haddan tashqari <i>ko'p</i> bo'lsa, murakkab g'oyalar guruhbozlik fikrlashi ostida ezilib ketadi.
+		Asosiy sir &mdash; ichki va tashqi aloqalarning maqbul aralashmasi bo'lgan "kichik dunyo tarmog'i"ni qurishdir: <i>ko'pchilikdan bittaga.</i>
+	</div>
+
+	<div style="
+	    width: 350px;
+	    position: absolute;
+	    top: 410px;
+	    left: 220px;
+	    text-align: center;
+	    color: #999;
+	">
+		(o'z simulyatsiyalaringizni yaratmoqchimisiz?
+		pastdagi (★) tugmasini bosib, Erkin rejimni tekshirib ko'ring!)
+	</div>
+
+	<div style="
+	    width: 400px;
+	    position: absolute;
+	    top: 395px;
+	    right: 0px;
+	    text-align: right;
+	">
+		Xo'sh, eng boshida bergan savolimiz nima bo'ladi?
+		Nega ba'zi olomon...
+	</div>
+	<div style="
+    width: 300px;
+    position: absolute;
+    top: 460px;
+    right: 0px;
+    font-size: 18px;        /* Shriftni kichraytirdik */
+    line-height: 1.2em;     /* Qatorlar juda uzoqlashib ketmasligi uchun */
+">
+    <next>...donolikka va/yoki telbalikka yuz tutadi?</next>
+</div>
+
+</words>
+
+<words id="conclusion_2">
+	<span style="line-height:1.4em; display:block;">
+
+		<div style="height:0.5em"></div>
+
+		Nyutondan tortib NASAgacha, tarmoqlar
+		<br>
+		ilmiga qadar bugun ko'p narsani ko'rib chiqdik.
+		<br>
+		Qisqasi, olomonning telbaligi har doim ham <i>alohida odamlarning</i>
+		<br>
+		ahmoqligidan emas, balki biz tarmoqning yopishqoq to'riga
+		<br>
+		tushib qolganimiz sabablidir.
+
+		<div style="height:0.9em"></div>
+
+		Bu shaxsiy mas'uliyatdan qochish kerakligini <i>bildirmaydi</i>,
+		<br>
+		chunki o'sha to'rni <i>to'quvchilar</i> ham o'zimizmiz. Shunday ekan, o'z yuqumli g'oyalaringizni yaxshilang:
+		<br>
+		o'zingizga yoqadigan g'oyalarga shubha bilan qarang<ref id="flatter"></ref>, murakkab
+		<br>
+		g'oyalarni tushunishga vaqt ajrating. Shuningdek, aloqalaringizni yaxshilang: o'zingizga o'xshash
+		<br>
+		odamlar bilan mustahkam bog'laning, lekin madaniy/siyosiy qarashlari boshqalar bilan ham ko'priklar quring.
+
+		<div style="height:0.9em"></div>
+
+		Biz dono tarmoq to'qiy olamiz. Albatta, bu ekranga chiziqlar
+		<br>
+		chizishdan ko'ra qiyinroq...
+
+		<next>...lekin bunga mutlaqo arziydi.</next>
+
+	</span>
+</words>
+
+<words id="conclusion_3">
+	<i>
+		“Tarixdagi buyuk g'alabalar va fojialarga sabab &mdash; odamlarning tubdan yaxshi yoki tubdan yomon ekanligi emas, balki ularning tubdan inson ekanligidir.”
+	</i>
+	<br>
+	<span style="position:relative; top:5px">~</span> Nil Geyman &amp; Terri Pratchett
+	<div style="height:0.8em"></div>
+	<next small>&lt;3</next>
+</words>
+
+<words id="credits">
+
+	<div style="text-align:center; color:#fff; letter-spacing: 1px; font-size: 24px; line-height: 27px;">
+	
+		<span style="color:#777; position:relative; top:5px;">
+			muallif</span>
+		<div style="font-size: 3em; line-height: 1.0em;">
+			NICKY CASE</div>
+		<a target="_blank" href="http://ncase.me" style="text-decoration:none">
+			boshqa o'yinlarimni o'ynash</a> ·
+		<a target="_blank" href="https://twitter.com/ncasenmare" style="text-decoration:none">
+			tvitterimni kuzatish</a>
+		
+		<br><br>
+
+		<span style="color:#777; position:relative; top:5px; display: inline-block; margin-top: 15px;">
+			cheksiz minnatdorchilik bildiriladi</span>
+		<div style="font-size: 3em; line-height: 1.0em;">
+			PATREON QO'LLAB-QUVVATLOVCHILARIMGA</div>
+		<a target="_blank" href="https://www.patreon.com/ncase" style="text-decoration:none">
+			shunga o'xshash loyihalar qilishimga yordam bering! &lt;3</a>
+		<br>
+		<a onclick='publish("reference/show", ["supporters"]);'>
+			homiylarni ko'rish</a> ·
+		<a onclick='publish("reference/show", ["playtesters"]);'>
+			testerlarni ko'rish</a>
+
+		<br><br>
+
+		<span style="display: inline-block; margin-top: 15px;">
+			♫ muzika:
+			<a target="_blank" href="http://freemusicarchive.org/music/Komiku/Tale_on_the_Late/" style="text-decoration:none">
+				"Friends 2018" va "Friends 2068"</a>
+			(muallif: Komiku)
+			<br>
+			&lt;/&gt; <i>Crowds</i> loyihasi
+			<a target="_blank" href="https://github.com/ncase/crowds" style="text-decoration:none">
+				to'liq ochiq kodli (open source)</a>
+		</span>
+
+		<br>
+
+		<bon id="further_reading"></bon>
+
+	</div>
+
+</words>
+
+<words id="WIN">
+	G'ALABA
+</words>
+<words id="sim_start">
+	simulyatsiyani boshlash
+</words>
+<words id="sim_stop">
+	tashlash &amp; qayta chizish
+</words>
+<words id="translations_exist">
+	Muxlislar tomonidan qilingan tarjimalar:
+</words>
+<words id="translations_do_not_exist">
+	Nima, hali birorta ham muxlislar tarjimasi yo'qmi?!
+</words>
+<words id="translations_add">
+	(o'zingiznikini qo'shing!)
+</words>
+<words id="translations_original">
+	(inglizcha asl nusxasi)
+</words>
+
+<bonus id="books">
+
+	<h3>
+	Jeyms Suroveskining <i>"Olomon donoligi"</i> kitobiga qisqacha munosabat
+	</h3>
+
+	<div>
+
+	<img src="sprites/bonus/surowieki.jpg" width="200" height="300" style="float:left; margin-right:1em"/>
+	
+	Avvalambor, men <a target="_blank" href="https://en.wikipedia.org/wiki/The_Wisdom_of_Crowds">ushbu kitobni</a> aslo kamsitmoqchi emasman.
+	Bu ajoyib asar va Suroveski ham men bilan bir xil savolga javob izlashga harakat qilgan:
+	<b>“nega ba'zi olomon telbalikka, ba'zilari esa donolikka yuz tutadi?”</b>
+
+	<br><br>
+
+	Suroveskining javobi: olomon hamma imkon qadar mustaqil fikrlaganida to'g'ri qarorlar qabul qiladi.
+	U bir qishloq yarmarkasi haqida hikoya qiladi, unda odamlardan ho'kizning vaznini taxmin qilish so'ralgan.
+	Ajablanarlisi shundaki, <i>barcha</i> taxminlarning o'rtacha qiymati har qanday <i>bitta</i> odamning taxminidan aniqroq chiqadi.
+	Lekin masalaning nozik tomoni bor: odamlar bir-biri bilan maslahatlashmasdan, <i>mustaqil ravishda</i> taxmin qilishlari kerak.
+	Aks holda, ular oldingi noto'g'ri taxminlar ta'siriga tushib qolishadi va o'rtacha ko'rsatkich keskin buziladi.
+
+	<br><br>
+
+	Biroq... men "hammani imkon qadar mustaqil qilish" to'liq javob bo'la oladi deb o'ylamayman.
+	Hatto biz eng mustaqil fikrlovchi deb hisoblaydigan daholar ham boshqalarning kuchli ta'sirida bo'lishadi. Ser Isaak Nyuton aytganidek:
+	<i>“Agar men uzoqroqni ko'ra olgan bo'lsam, bu gigantlarning yelkasida turganim tufaylidir.”</i>
+
+	<br><br>
+
+	Xo'sh, qaysi g'oya to'g'ri?
+	Donolik o'zingizcha fikrlashdan keladimi yoki boshqalar bilan birga fikrlashdan?
+	Javob: "ikkalasidan ham".
+
+	<br><br>
+
+	Ushbu interaktiv qo'llanmada men aynan shuni tushuntirishga harakat qilaman:
+	mustaqillik va o'zaro bog'liqlik o'rtasidagi o'sha oltin o'rtaliqni qanday topish mumkin &mdash;
+	ya'ni oqilona olomonni qanday shakllantirish mumkin.
+
+	</div>
+
+</bonus>
+<bonus id="connections">
+
+	<h3>
+	Yana qanday bog'lanish turlari mavjud?
+	</h3>
+
+	<div>
+
+	Soddalik uchun mening simulyatsiyalarim odamlar faqat do'stlik orqali bog'lanishi mumkinligini
+	va barcha do'stliklar teng ekanligini ko'rsatadi.
+	Lekin tarmoq olimlari biz bog'lanishimiz mumkin bo'lgan boshqa usullarni ham hisobga olishadi, masalan:
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/connection1.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Yo'naltirilgan aloqalar (Directional connections).</b> Alisa Bobning boshlig'i, lekin Bob Alisaning boshlig'i emas.
+	Karol Deyvning ota-onasi, lekin Deyv Karolning ota-onasi emas.
+	"Boshliq" va "ota-ona" &mdash; bu <i>yo'naltirilgan</i> munosabatlardir:
+	munosabatlar faqat bir tomonga boradi.
+	Aksincha, "do'stlar" &mdash; bu <i>ikki tomonlama (bidirectional)</i> munosabatdir:
+	aloqa har ikki tomonga ham tegishli bo'ladi (har holda, shunday bo'lishidan umid qilamiz).
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/connection2.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Og'irlik berilgan aloqalar (Weighted connections).</b> Elinor va Frenki shunchaki tanishlar.
+	Jorj va Harri esa ajralmas, qiyomatli do'stlar.
+	Ikkala holatda ham "do'stlik" aloqasi mavjud bo'lsa-da, ikkinchisi ancha mustahkamroq.
+	Biz ushbu ikki aloqaning "og'irligi" (kuchi) har xil deb aytamiz.
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/map.png" width="200" height="200" style="float:left; margin-right:1em"/>
+	Unutmang: <b>bu simulyatsiyalarning barchasi noto'g'ri.</b> Xuddi har qanday xarita "noto'g'ri" bo'lgani kabi.
+	Chapdagi xaritani ko'ryapsizmi? Binolar kulrang, xususiyatsiz bloklar emas!
+	So'zlar shahar ustida muallaq turmaydi! Biroq, xaritalar soddalashtirilganiga qaramay emas, balki aynan soddalashtirilgani <i>tufayli</i> foydalidir.
+	Simulyatsiyalar yoki har qanday ilmiy nazariya ham xuddi shunday.
+	Albatta ular "noto'g'ri" &mdash; aynan shu narsa ularni <i>foydali</i> qiladi.
+
+	</div>
+
+</bonus>
+<bonus id="contagions">
+
+	<h3>
+	Yana qanday yuqumlilik turlari bor?
+	</h3>
+
+	<div>
+	
+	Tarmoq olimlari "yuqumlilik"ni simulyatsiya qilishning juda ko'p usullarini bilishadi!
+	Tushunish oson bo'lishi uchun men eng oddiyini tanladim.
+	Lekin buni amalga oshirishning boshqa usullari ham bor:
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/contagion1.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Tasodifiylikka ega yuqumlilik</b>.
+	Yuqumli narsaga duch kelish sizning ham mutlaqo "kasallanishingizni" <i>kafolatlamaydi</i>,
+	bu shunchaki buning <i>ehtimolini</i> oshiradi.
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/contagion2.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Odamlarning yuqtirish cheklovlari turlicha.</b> 
+	Mening simulyatsiyalarim go'yoki hammaning ichkilikka (50%), ko'ngillilikka (25%) yoki yolg'on xabarlarga (0%) bo'lgan moyillik cheklovi bir xil deb ko'rsatadi.
+	Albatta, haqiqiy hayotda unday emas va siz simulyatsiyani shunga moslab murakkablashtirishingiz mumkin.
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/contagion3.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Yuqumlilik ekologiyasi.</b>
+	Agar turli xil cheklovlarga ega <i>bir nechta</i> yuqumli g'oyalar bo'lsa-chi?
+	Masalan, oddiy "telbalik" yuqumliligi va murakkab "donolik" yuqumliligi.
+	Agar kimdir telbalikni yuqtirib olgan bo'lsa, unga baribir donolik yuqishi mumkinmi?
+	Yoki aksincha? Kimdir ikkalasini ham yuqtirishi mumkinmi?
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/contagion4.png" width="250" height="150" style="float:left; margin-right:1em"/>
+	<b>Mutatsiyaga uchraydigan va rivojlanadigan yuqumliliklar.</b>
+	G'oyalar odamdan odamga virus kabi mukammal tarzda o'tmaydi.
+	Xuddi "buzilgan telefon" o'yinidagi kabi, xabar har safar qayta aytilganda biroz o'zgaradi (mutatsiyaga uchraydi) &mdash;
+	va ba'zida o'zgargan variant asl nusxadan ko'ra ko'proq yuqumli bo'lib chiqadi!
+	Shunday qilib, vaqt o'tishi bilan g'oyalar yanada jozibador, esda qolarli va yuqumli bo'lish uchun "rivojlanib" boradi.
+
+	<div style="clear:both"></div>
+
+	</div>
+
+</bonus>
+<bonus id="further_reading">
+	
+	<h3>
+	Ko'proq o'rganishni xohlayman! Yana nimalarni o'qishim yoki o'ynashim mumkin?
+	</h3>
+	
+	<div>
+	
+	Ushbu interaktiv qo'llanma sizning qiziquvchanligingiz uchun shunchaki bir tramplin edi,
+	endi siz bilimlar ummoniga chuqurroq sho'ng'ishingiz mumkin!
+	Tarmoqlar yoki ijtimoiy tizimlar haqida qo'shimcha materiallar:
+
+	<br><br>
+
+	<img src="sprites/bonus/connected.png" width="200" height="200" style="float:left; margin-right:1em"/>
+	<b>Kitob:</b>
+	<a target="_blank" href="http://www.connectedthebook.com/">
+	Connected</a>
+	(Mualliflar: Nicholas Christakis va James Fowler, 2009).
+	Bizning tarmoqlarimiz hayotimizga qanday yaxshi yoki yomon ta'sir qilishi haqida ommabop va tushunarli qo'llanma.
+	<a target="_blank" href="http://www.connectedthebook.com/pdf/excerpt.pdf">
+	Bu yerda parcha bor: Muqaddima va 1-bob
+	</a>
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/trust.png" width="200" height="200" style="float:left; margin-right:1em"/>
+	<b>Interaktiv o'yin:</b>
+	<a target="_blank" href="http://ncase.me/trust/">
+	The Evolution of Trust</a> (Muallif: Nicky Case (men), 2017).
+	Hamkorlik qanday barpo etilishi yoki yo'q qilinishi haqidagi o'yinlar nazariyasiga oid loyiha.
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/polygons.png" width="200" height="200" style="float:left; margin-right:1em"/>
+	<b>Interaktiv o'yin:</b>
+	<a target="_blank" href="http://ncase.me/polygons/">
+	Parable of the Polygons</a> (Mualliflar: Vi Hart va Nicky Case, 2014).
+	Zararsiz ko'ringan shaxsiy tanlovlar qanday qilib zararli dunyoni yaratishi haqida hikoya.
+
+	<div style="clear:both"></div>
+	<br>
+
+	<img src="sprites/bonus/ee.png" width="200" height="200" style="float:left; margin-right:1em"/>
+	Yoki shunchaki turli xil interaktiv ta'lim loyihalarini ko'rishni istasangiz, mana bu yerga kiring:
+	<a target="_blank" href="http://explorabl.es/">
+	Explorable Explanations</a> &mdash;
+	o'yin orqali o'rganish markazi!
+
+	<div style="clear:both"></div>
+
+	</div>
+
+</bonus>
+
+<reference id="drunk">
+
+	<h3>
+	“deyarli barcha [kollej] talabalari o'z do'stlarini o'zlariga qaraganda ko'proq ichadi deb hisoblashadi.”
+	</h3>
+
+	<div>
+	<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/1758185">
+	“Biases in the perception of drinking norms among college students”</a> (Mualliflar: Baer va boshqalar, 1991)
+	</div>
+
+</reference>
+<reference id="majority">
+
+	<h3>
+	“Ko'pchilik illyuziyasi”
+	</h3>
+
+	<div>
+	<a target="_blank" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0147617">
+	“The Majority Illusion in Social Networks”</a> (Mualliflar: Lerman va boshqalar, 2016).
+	<br>
+	Bog'liq mavzu: <a target="_blank" href="https://en.wikipedia.org/wiki/Friendship_paradox">
+	Do'stlik paradoksi</a>.
+	</div>
+</reference>
+<reference id="contagion">
+	
+	<h3>
+	“chekish, sog'liq, baxt, ovoz berish tendensiyalari va hamkorlik darajasining barchasi yuqumli ekanligiga kuchli statistik dalillar bor”
+	</h3>
+
+	<div>
+	
+	Nicholas Christakis va James Fowlerning ajoyib tarzda, oddiy tilda yozilgan kitobidan:
+	<a target="_blank" href="http://www.connectedthebook.com/">
+	Connected</a> (2009). 
+
+	</div>
+</reference>
+<reference id="suicides">
+
+	<h3>
+	“o'z joniga qasd qilish ham [yuqumli] ekanligiga ba'zi dalillar mavjud”
+	</h3>
+
+	<div>
+	<a target="_blank" href="http://www.jstor.org/stable/42000514?seq=4#page_scan_tab_contents">
+	“Suicide Contagion and the Reporting of Suicide: Recommendations from a National Workshop”</a>
+	(Mualliflar: O'Carroll va boshqalar, 1994), AQSh Kasalliklarni nazorat qilish va oldini olish markazi (CDC) tomonidan tasdiqlangan.
+	</div>
+
+</reference>
+<reference id="shootings">
+
+	<h3>
+	“ommaviy otishmalar ham [yuqumli] ekanligiga ba'zi dalillar mavjud”
+	</h3>
+
+	<div>
+
+	<a target="_blank" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0117259">
+	“Contagion in Mass Killings and School Shootings”</a> (Mualliflar: Towers va boshqalar, 2015).
+
+	<br><br>
+
+	Shuningdek qarang: <a target="_blank" href="http://www.dontnamethem.org/">Don't Name Them</a> (Ularning nomini aytmang) kampaniyasi.
+	U ommaviy axborot vositalarini qotillarning ismlarini, manifestlarini va ijtimoiy tarmoqlarini <i>ko'rsatmaslikka</i> chaqiradi.
+	Chunki bu narsa infeksiyani tarqatadi. Buning o'rniga OAV e'tiborni qurbonlarga, birinchi yordam ko'rsatgan qahramonlarga va qayg'urayotgan jamiyatga qaratishi kerak.
+
+	</div>
+
+</reference>
+<reference id="subprime">
+
+	<h3>
+	“Dunyoning moliya institutlari esa 2008-yilda xuddi shunday kaskadga uchragan.”
+	</h3>
+
+	<div>
+	<a target="_blank" href="https://newrepublic.com/article/63023/wall-streets-lemmings">
+	“Lemmings of Wall Street”</a> (Muallif: Cass Sunstein) &mdash; qisqa, sodda tilda yozilgan maqola.
+	2008-yil oktyabr oyida, inqirozning eng qizg'in pallasi e'lon qilingan.
+	</div>
+
+</reference>
+<reference id="complex">
+
+	<h3>
+	“murakkab yuqumlilik nazariyasi.”
+	</h3>
+
+	<div>
+
+	<a target="_blank" href="https://www.unc.edu/~fbaum/teaching/articles/Granovetter_AJS_1978.pdf">
+	“Threshold Models of Collective Behavior”</a> (Muallif: Granovetter, 1978) &mdash;
+	mening bilishimcha, "murakkab yuqumlilik" modelini birinchi marta kimdir tasvirlab bergan maqola.
+	(garchi u aynan shu nomni ishlatmagan bo'lsa ham)
+
+	<br><br>
+
+	<a target="_blank" href="http://www.jstor.org/stable/10.1086/521848?seq=1#page_scan_tab_contents">
+	“Complex Contagions and the Weakness of Long Ties”</a> (Mualliflar: Centola &amp; Macy, 2007) &mdash;
+	"complex contagion" (murakkab yuqumlilik) iborasini fanga kiritgan va uning "oddiy yuqumlilik"dan muhim farqlarini ko'rsatib bergan asar.
+
+	<br><br>
+
+	<a target="_blank" href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0180802">
+	“Evidence for complex contagion models of social contagion from observational data”</a>
+	(Mualliflar: Sprague &amp; House, 2017) &mdash;
+	ijtimoiy tarmoq ma'lumotlariga tayanib, murakkab yuqumliliklarning mavjudligini empirik tarzda isbotlagan tadqiqot.
+
+	<br><br>
+
+	Va nihoyat, <a target="_blank" href="https://arxiv.org/pdf/cond-mat/0403699.pdf">
+	“Universal behavior in a generalized model of contagion”</a> (Mualliflar: Dodds &amp; Watts, 2004) &mdash;
+	barcha turdagi yuqumliliklarni (oddiy va murakkab, biologik va ijtimoiy) birlashtiruvchi universal modelni taklif qiladi!
+
+	</div>
+
+</reference>
+<reference id="possum">
+	<h3>
+	“xaltali kalamushning 13 ta ko'kragi bor”
+	</h3>
+	<div>
+	ular 12 tasi doira shaklida va bittasi o'rtada joylashgan qiyofada bo'ladi
+	</div>
+</reference>
+<reference id="groupthink">
+
+	<h3>
+	“guruhbozlik fikrlashi (groupthink)”
+	</h3>
+
+	<div>
+	Oruell asarlaridan ilhomlangan ushbu ibora Irving Janis tomonidan 1971-yilda o'ylab topilgan.
+	<a target="_blank" href="https://web.archive.org/web/20100401033524/http://apps.olin.wustl.edu/faculty/macdonald/GroupThink.pdf">
+	O'zining asl maqolasida</a> Janis guruhbozlik holatlarini o'rganadi, uning sabablarini va xayriyatki, uni davolash choralarini sanab o'tadi.
+	</div>
+
+</reference>
+<reference id="social_capital">
+
+	<h3>
+	“ichki va tashqi ijtimoiy kapital”
+	</h3>
+
+	<div>
+	Ijtimoiy kapitalning ushbu ikki turi &mdash; "bonding" (ichki) va "bridging" (tashqi) &mdash;
+	Robert Putnam tomonidan o'zining 2000-yildagi ajoyib kitobida nomlangan:
+	<a target="_blank" href="http://bowlingalone.com/">
+	Bowling Alone</a>. Uning kashfiyoti shuki, ijtimoiy aloqalarning deyarli <i>barcha</i> empirik ko'rsatkichlari bo'yicha amerikaliklar har qachongidan ham ko'proq yolg'izlanib qolishgan.
+	Afsus.
+	</div>
+
+</reference>
+<reference id="bridge">
+
+	<h3>
+	“tashqi ijtimoiy kapitalda ham oltin o'rtaliq mavjud”
+	</h3>
+
+	<div>
+	<a target="_blank" href="https://sociology.stanford.edu/sites/default/files/publications/the_strength_of_weak_ties_and_exch_w-gans.pdf">
+	“The Strength of Weak Ties”</a> (Muallif: Granovetter, 1973) guruhlararo aloqalar oddiy g'oyalarni (ma'lumot kabi) tarqatishga yordam berishini ko'rsatgan bo'lsa,
+	<a target="_blank" href="http://www.jstor.org/stable/10.1086/521848?seq=1#page_scan_tab_contents">
+	“Complex Contagions and the Weakness of Long Ties”</a> (Mualliflar: Centola &amp; Macy, 2007) esa, aksincha, guruhlararo aloqalar murakkab g'oyalarga yordam bermasligi, hatto ularning tarqalishiga to'sqinlik qilishi mumkinligini isbotlagan!
+	</div>
+
+</reference>
+<reference id="small_world">
+
+	<h3>
+	“kichik dunyo tarmog'i”
+	</h3>
+
+	<div>
+
+	"Kichik dunyo" g'oyasi <a target="_blank" href="http://www.jstor.org/stable/2786545">Travers va Milgramning 1969-yildagi tajribasi</a> orqali ommalashgan.
+	Unga ko'ra, AQShdagi har qanday ikkita tasodifiy odam o'rtasida o'rtacha atigi oltita do'stlik rishtasi mavjud bo'lgan &mdash; "olti darajali ajralish" (six degrees of separation)!
+
+	<br><br>
+
+	Kichik dunyo tarmoqlari o'zining matematik asosiga <a target="_blank" href="http://leonidzhukov.net/hse/2014/socialnetworks/papers/watts-collective_dynamics-nature_1998.pdf">
+	“Collective dynamics of small-world networks”</a> (Mualliflar: Watts &amp; Strogatz, 1998) maqolasi orqali ega bo'ldi.
+	Unda ham past o'rtacha masofaga (kam ajralish darajasi), ham yuqori klasterlanishga (do'stlarning umumiy do'stlari ko'pligi) ega tarmoqlarni qurish algoritmi taklif qilingan &mdash; ya'ni o'sha oltin o'rtaliqni topadigan tarmoq!
+
+	<br><br>
+
+	Siz ushbu maqolaning vizual va interaktiv varianti bilan ham o'ynab ko'rishingiz mumkin:
+	<a target="_blank" href="http://worrydream.com/ScientificCommunicationAsSequentialArt/">
+	Bret Viktor moslashuvi</a> (2011).
+
+	</div>
+
+</reference>
+<reference id="swn_neurons">
+
+	<h3>
+	“[kichik dunyo tarmoqlari] bizning neyronlarimiz qanday bog'langanligini tushuntiradi”
+	</h3>
+
+	<div>
+	<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/17079517">
+	“Small-world brain networks”</a> (Mualliflar: Bassett &amp; Bullmore, 2006).
+	</div>
+
+</reference>
+<reference id="swn_creativity">
+
+	<h3>
+	“[kichik dunyo tarmoqlari] jamoaviy ijodkorlikni rag'batlantiradi”
+	</h3>
+
+	<div>
+
+	<a target="_blank" href="http://www.jstor.org/stable/10.1086/432782?seq=1#page_scan_tab_contents">
+	“Collaboration and Creativity: The Small World Problem”</a> (Mualliflar: Uzzi &amp; Spiro, 2005).
+	Ushbu maqola vaqt o'tishi bilan Brodvey sahnasining ijtimoiy tarmog'ini tahlil qildi va tarmoq aynan "kichik dunyo" qiyofasida bo'lganida eng ijodkor bo'lishini aniqladi!
+
+	</div>
+
+</reference>
+<reference id="swn_social_physics">
+
+	<h3>
+	“[kichik dunyo tarmoqlari] muammolarni birgalikda hal qilishga yordam beradi”
+	</h3>
+
+	<div>
+	Jamoaviy intellektga ma'lumotlar asosida yondashishni ko'rish uchun MIT professori Aleks "Sendi" Pentlendning
+	<a target="_blank" href="http://socialphysics.media.mit.edu/">“Social Physics”</a> (2014) asariga qarang.
+	</div>
+
+</reference>
+<reference id="swn_jfk">
+
+	<h3>
+	“[kichik dunyo tarmoqlari] Jon Kennediga (arang) yadro urushining oldini olishga yordam bergan!”
+	</h3>
+
+	<div>
+
+	NASAning Challenger portlashidan tashqari, guruhbozlik fikrlashining eng mashhur va sharmandali misoli &mdash; Cho'chqalar ko'rfazi (Bay of Pigs) fojiasidir.
+	1961-yilda AQSh prezidenti Jon Kennedi va uning maslahatchilari jamoasi &mdash; qaysidir sababga ko'ra &mdash;
+	Kubaga yashirincha bostirib kirish va Fidel Kastroni ag'darish yaxshi g'oya deb o'ylashgan. Ular muvaffaqiyatsizlikka uchrashdi.
+	Aslida muvaffaqiyatsizlikdan ham yomoni bo'ldi: bu holat 1962-yilgi Kuba raketa inqiroziga olib keldi,
+	bu <i>dunyo to'liq miqyosdagi yadro urushiga eng yaqin kelgan lahza edi.</i>
+
+	<br><br>
+
+	Ha, Kennedi u safar juda katta xatoga yo'l qo'ygan edi.
+
+	<br><br>
+
+	Biroq, Cho'chqalar ko'rfazi fojiasidan achchiq saboq olgan Kennedi guruhbozlik fikrlashidan qochish uchun o'z jamoasini qayta tashkil qildi. Qilingan ishlar sirasiga:
+	1) u odamlarni muqobil g'oyalar uchun "yuqumlilik cheklovi"ni pasaytirgan holda, tanqidiy fikr bildirishga faol ravishda undadi.
+	Va 2) u qayta birlashishdan oldin o'z jamoasini kichik guruhlarga bo'lib yubordi, bu esa ularning tarkibiga "kichik dunyo tarmog'i"ga o'xshash dizayn berdi!
+	Bu tartib o'ta parchalanib ketmasdan, sog'lom fikrlar xilma-xilligini ta'minladi &mdash; haqiqiy olomon donoligi.
+
+	<br><br>
+
+	Shunday qilib, Cho'chqalar ko'rfazi haqida qaror qabul qilgan aynan o'sha <i>shaxslar</i> bilan, lekin jamoaviy qaror qabul qilish tizimi <i>qayta tashkil etilgan holda</i>... Kennedi jamoasi Sovet Ittifoqi rahbari Nikita Xrushchyov bilan tinch kelishuvga erisha oldi. Sovetlar o'z raketalarini Kubadan olib chiqib ketishdi, evaziga AQSh Kubaga boshqa bostirib kirmaslikka va'da berdi.
+	(shuningdek, yashirincha AQSh ham Turkiyadagi o'z raketalarini olib tashlashga rozi bo'ldi).
+
+	<br><br>
+
+	Butun insoniyat deyarli qirilib ketishiga sal qolgan voqea mana shunday bo'lgan edi.
+	Lekin kichik dunyo tarmog'i vaziyatni qutqarib qoldi! Qaysidir ma'noda.
+
+	<br><br>
+
+	Bu haqida batafsil <a target="_blank" href="https://hbr.org/2013/11/how-john-f-kennedy-changed-decision-making">Harvard Business Review</a> nashrida,
+	yoki <a target="_blank" href="https://web.archive.org/web/20100401033524/http://apps.olin.wustl.edu/faculty/macdonald/GroupThink.pdf">guruhbozlik haqidagi asl maqolada</a> o'qishingiz mumkin.
+
+	</div>
+
+</reference>
+<reference id="three_degrees">
+
+	<h3>
+	“biz [...] do'stlarimizning do'stlarining do'stlariga ham ta'sir o'tkazamiz!”
+	</h3>
+
+	<div>
+	Yana o'sha Nicholas Christakis va James Fowlerning ajoyib kitobidan:
+	<a target="_blank" href="http://www.connectedthebook.com/">Connected</a> (2009).
+	</div>
+
+</reference>
+<reference id="flatter">
+	<h3>
+	“o'zingizga yoqadigan g'oyalarga shubha bilan qarang”
+	</h3>
+	<div>
+	ha, jumladan <i>ushbu</i> interaktiv qo'llanmadagi g'oyalarga ham.
+	</div>
+</reference>
+<reference id="sandbox">
+
+	<h3>
+	★ Erkin rejim ★
+	</h3>
+
+	<div>
+	Klaviatura tugmalari (1, 2, probel, backspace)
+	nafaqat Erkin rejimda, balki <i>barcha</i> bosh qotirmalarda ham ishlaydi!
+	Haqiqatan ham, istalgan bobga qaytib, simulyatsiyani o'sha yerning o'zida tahrirlashingiz mumkin.
+	To'g'risini aytsam, men ushbu jumboqlarning barchasini aynan shu yo'l bilan yaratganman. Maroqli dam oling!
+	</div>
+
+</reference>
+<reference id="supporters" hidden=yes large=yes>
+	<div>
+	Aziz Patreon homiylari:
+	Sizning saxiyligingiz meni <i>so'zning to'g'ri ma'nosida</i> boqadi va ijaramni to'laydi.
+	Siz menga mana shunday g'alati ta'limiy o'yinlarni yaratish erkinligini beryapsiz, shuning uchun chin qalbimdan rahmat aytaman. &lt;3
+	<br>
+	<a target="_blank" href="https://www.patreon.com/ncase" style="text-decoration:none">
+		(shunga o'xshash narsalarni ko'proq qilishimni qo'llab-quvvatlashni istasangiz, Patreonga o'ting!)</a>
+	</div>
+</reference>
+<reference id="playtesters" hidden=yes large=yes>
+	<div>
+
+	Ushbu o'yinning turli bosqichlarida uni sinab ko'rgan (playtest qilgan) barchaga rahmat!
+	
+	<br><br>
+	<b>Prototip mualliflari:</b>
+	<br>
+	Maria ·
+	Monica Srivastava
+
+	<br><br>
+	<b>Alfa-versiya:</b>
+	<br>
+	Glen Chiacchieri ·
+	Kalli Repzeti ·
+	Mali Akmanalp ·
+	Toph Tucker
+
+	<br><br>
+	<b>Beta-versiya:</b>
+	<br>
+	Alex Dytrych ·
+	Amit Patel ·
+	Cassandra McClure ·
+	Catherine Ray ·
+	Josh Comeau ·
+	Kayle Sawyer ·
+	Matthew Conlen ·
+	Srini Kadamati ·
+	Vanessa Shen ·
+	Wick Perry
+
+	</div>
+</reference>
+
+</span>

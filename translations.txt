@@ -51,3 +51,4 @@ he: Hebrew
 fi: suomi
 fa: فارسی
 tr: Türkçe
+uz: O'zbek
